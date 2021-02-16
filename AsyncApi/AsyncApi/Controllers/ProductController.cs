@@ -10,7 +10,7 @@ using AsyncApi.Models;
 namespace AsyncApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
         IProductRepository productRepository;
