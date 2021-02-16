@@ -9,7 +9,7 @@
           "Port": "7001"
         }
       ],
-      "UpstreamPathTemplate": "/product/{id}",
+      "UpstreamPathTemplate": "/api/product/{id}",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
@@ -21,7 +21,7 @@
           "Port": "7001"
         }
       ],
-      "UpstreamPathTemplate": "/product",
+      "UpstreamPathTemplate": "/api/product",
       "UpstreamHttpMethod": [ "GET" ]
     },
     {
@@ -33,7 +33,7 @@
           "Port": "7001"
         }
       ],
-      "UpstreamPathTemplate": "/product/add",
+      "UpstreamPathTemplate": "/api/product/add",
       "UpstreamHttpMethod": [ "POST" ]
     },
     {
@@ -45,7 +45,7 @@
           "Port": "7001"
         }
       ],
-      "UpstreamPathTemplate": "/product/{id}",
+      "UpstreamPathTemplate": "/api/product/{id}",
       "UpstreamHttpMethod": [ "DELETE" ]
     },
     {
@@ -57,8 +57,32 @@
           "Port": "7001"
         }
       ],
-      "UpstreamPathTemplate": "/product/update",
+      "UpstreamPathTemplate": "/api/product/update",
       "UpstreamHttpMethod": [ "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/email/setup",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7002"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/email/setup",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/email/send",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "7002"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/email/send",
+      "UpstreamHttpMethod": [ "POST" ]
     }
 
   ],
