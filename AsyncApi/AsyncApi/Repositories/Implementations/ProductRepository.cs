@@ -41,7 +41,7 @@ namespace AsyncApi.Repositories.Implementations
             Product productToUpdate = await _productContext.Products.FindAsync(product.Id);
             if (productToUpdate != null)
             {
-                productToUpdate = product;
+                _productContext.Entry<Product>(productToUpdate).CurrentValues.SetValues(product);
                 await _productContext.SaveChangesAsync();
             }
         }
